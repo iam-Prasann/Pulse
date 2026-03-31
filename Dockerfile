@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 
 FROM node:20-alpine AS builder
-LABEL org.opencontainers.image.title="PULSE-MAIN"
-LABEL org.opencontainers.image.description="Build stage for the PULSE-MAIN Vite React app"
+LABEL org.opencontainers.image.title="PULSE-APP"
+LABEL org.opencontainers.image.description="Build stage for the PULSE-APP Vite React app"
 WORKDIR /app
 
 # Install dependencies
@@ -14,8 +14,8 @@ COPY . .
 RUN npm run build
 
 FROM nginx:stable-alpine AS production
-LABEL org.opencontainers.image.title="PULSE-MAIN"
-LABEL org.opencontainers.image.description="Production image for the PULSE-MAIN Vite React app"
+LABEL org.opencontainers.image.title="PULSE-APP"
+LABEL org.opencontainers.image.description="Production image for the PULSE-APP Vite React app"
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 
