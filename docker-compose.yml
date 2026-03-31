@@ -8,7 +8,7 @@ services:
     image: pulse-app:latest
     container_name: pulse-app
     ports:
-      - "80:80"
+      - "3000:80"
     restart: unless-stopped
     environment:
       # Add runtime environment variables here if needed
