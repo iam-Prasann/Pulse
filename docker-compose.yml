@@ -1,11 +1,12 @@
 version: '3.9'
 
 services:
-  pulse-main:
+  pulse-app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pulse-main:latest
+    image: pulse-app:latest
+    container_name: pulse-app
     ports:
       - "80:80"
     restart: unless-stopped
