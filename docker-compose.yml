@@ -5,11 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pulse-app:latest
+    # Change this to match your Docker Hub image for deployment
+    image: iamparab/pulse-app:latest 
     container_name: pulse-app
     ports:
       - "3000:80"
     restart: unless-stopped
-    environment:
-      # Add runtime environment variables here if needed
-      # GEMINI_API_KEY: "your_api_key"
+    # Environment section removed to fix the 'mapping' error
