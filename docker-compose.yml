@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  pulse-main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pulse-main:latest
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    environment:
+      # Add runtime environment variables here if needed
+      # GEMINI_API_KEY: "your_api_key"
